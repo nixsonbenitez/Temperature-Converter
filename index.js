@@ -1,10 +1,11 @@
+let f = 9;
 
-function convertToCelsius(f) { 
-  return (f - 32) * 5 / 9; 
+function convertToCelsius(f) {
+  return (f - 32) * 5 / 9;
 }
 
 function describeTemperature(f) {
-  const celsius = convertToCelsius(f);
+  let celsius = convertToCelsius(f);
 
   if (celsius < 0) {
     return "very cold";
@@ -19,15 +20,9 @@ function describeTemperature(f) {
   }
 }
 
-const fahrenheitInput = prompt(
-  "Type in a temperature in Fahrenheit for it to be converted to Celsius:"
-);
+let celsius = convertToCelsius(f);
+let description = describeTemperature(f);
 
-const fahrenheit = Number(fahrenheitInput);
-
-const celsius = convertToCelsius(fahrenheit);
-const description = describeTemperature(fahrenheit);
-
-alert(`That is ${celsius}C, which feels ${description}.`);
-
-
+console.log("Fahrenheit:", f);
+console.log("Celsius:", celsius);
+console.log("Feels like:", description);
